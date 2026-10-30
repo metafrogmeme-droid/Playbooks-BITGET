@@ -1,0 +1,111 @@
+# GetAgent draft cleanup checklist
+
+Generated 2026-10-30 from `GET /api/v1/playbook/list?status=draft` (first 100 drafts returned; there may be more).
+
+Rule: for drafts with the same name, title and symbols, keep the newest and delete the rest. The API has no delete call, so delete these on the GetAgent page.
+
+## Keep (35)
+
+- Crypto Majors Moving-Average Trend — BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT — `5b57ad6f-facc-48a1-972f-ad850033039e`
+- SOL Net Expectancy — SOLUSDT — `a2f4370d-9ffd-402f-a74c-eaaa6be0a98c`
+- USDT-M EMA ADX Long — BTCUSDT, ETHUSDT, SOLUSDT — `f5e91489-4b49-4a8c-b4ed-fcc09aaad94f`
+- BTC MACD POC-Confirmed Perpetual — BTCUSDT — `82da6522-3723-430a-9325-31e2c5c2a09b`
+- RUNECLAW Confluence — BNBUSDT, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT — `efb27b00-7921-4fac-b73a-d1cb7f72ebb9`
+- RUNECLAW Confluence — BNBUSDT, BTCUSDT — `5d014dcf-f5db-4ddf-b31c-b1fbc22019f3`
+- RUNECLAW Limit Entry Scanner — BTCUSDT, ETHUSDT, SOLUSDT, LABUSDT, ZECUSDT — `4eb425d3-5203-4513-9d6f-2771997c448c`
+- AVAX Weekly Momentum — AVAXUSDT — `87cc7c50-4cb8-40c6-976e-b82db066fc12`
+- ADA Volatility Breakout — ADAUSDT — `5e421c90-ca6c-46f4-aff3-44a8804b4a28`
+- BTC Daily Trend Breakout — BTCUSDT — `30684353-d21e-40a2-a907-c12eaeee7857`
+- Whale Book Capture Utility — BTCUSDT — `c8786002-9500-42b4-b719-7de618e3046b`
+- RUNECLAW Daily Momentum v3.2.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, DOGEUSDT — `87be9ba6-6c12-409e-b457-23d9cd393703`
+- RUNECLAW Daily Momentum v3.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, DOGEUSDT — `7c4433be-fc15-44a6-a577-b67dbaf99f75`
+- RUNECLAW GetClaw v2.11.0 — BNBUSDT — `43a30484-0a5f-48fa-82fb-69962d0f9760`
+- RUNECLAW GetClaw v2.11.0 — ETHUSDT — `c28debb5-e1d7-41a6-83b5-172fbd275169`
+- RUNECLAW GetClaw v2.11.0 — SUIUSDT — `e7c6b336-5ab4-4e1d-9b6e-1725f3737762`
+- RUNECLAW GetClaw v2.11.0 — TONUSDT — `9ec4be9a-d382-4455-b96e-dcaadbfbc439`
+- RUNECLAW GetClaw v2.11.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `31cd45a0-6310-4d66-a666-052d9d8fa09d`
+- RUNECLAW GetClaw v2.12.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `1cf83383-e6c2-49bd-aee8-3ccf49e86717`
+- RUNECLAW GetClaw v2.10.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `8f74025c-7080-4733-b162-8841a3429c44`
+- RUNECLAW GetClaw v2.10.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `3318d9ec-911e-425c-8627-f5a1e69bcbb0`
+- RUNECLAW GetClaw v2.9.2 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `b4e561f7-317f-4aea-b9c5-a73c3523dd55`
+- RUNECLAW GetClaw v2.9.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `c98ef27e-f86d-4e37-a788-58c7c2a8bbf4`
+- RUNECLAW GetClaw v2.9.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `4ca8d368-eed7-45d0-954c-ba4c6faf1601`
+- RUNECLAW GetClaw v2.7.2 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `34808f6b-5e02-43fe-bae4-8d16bbdc74b6`
+- RUNECLAW GetClaw v2.8.2 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `56af20ca-99b8-4394-bdf3-e3b1d9627bea`
+- RUNECLAW GetClaw v2.4 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `0a77c8f2-b8ce-4672-a68a-94cd1d526738`
+- RUNECLAW GetClaw v2.4 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `04157b9c-7df8-43ee-8b80-acd61f0811c3`
+- RUNECLAW GetClaw v2.2 — SOLUSDT — `e78cff92-0bb9-4d3d-b132-b0cfd7b86c1a`
+- RUNECLAW GetClaw v2.2 — BTCUSDT — `c0612e8e-7993-4e6d-ad45-9db2e910cf03`
+- RUNECLAW GetClaw v2.2 — XRPUSDT — `334a71ed-51e2-4f6c-8424-efeeb5231cdc`
+- RUNECLAW GetClaw v2.2 — DOGEUSDT — `bff0bd2a-a94a-4b2a-b4a4-659f3dc1eca1`
+- RUNECLAW GetClaw v2.2 — ETHUSDT — `f0783cb0-99f8-4ec4-b182-a676b4198df8`
+- RUNECLAW GetClaw v2.1 — BTCUSDT — `24b0fdc0-aafd-4d6d-a91b-7abd52ffc119`
+- RUNECLAW GetClaw v2.1 — SOLUSDT — `50347d14-21d8-40c5-a2d0-c2ffaeda7f24`
+
+## Delete (65)
+
+- [ ] BTC MACD POC-Confirmed Perpetual — BTCUSDT — `9e4c38a5-9829-479a-80d0-d73ece231376` — duplicate of an identical newer draft
+- [ ] RUNECLAW Limit Entry Scanner — BTCUSDT, ETHUSDT, SOLUSDT, LABUSDT, ZECUSDT — `5072428d-3652-46f6-86a7-e2031cd538c6` — duplicate of an identical newer draft
+- [ ] RUNECLAW Limit Entry Scanner — BTCUSDT, ETHUSDT, SOLUSDT, LABUSDT, ZECUSDT — `7f89096d-2e07-40ee-9b0b-4938d619a09c` — duplicate of an identical newer draft
+- [ ] RUNECLAW Daily Momentum v3.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, DOGEUSDT — `1c476cd1-541a-4cad-a4d6-0c2f37a38b76` — duplicate of an identical newer draft
+- [ ] RUNECLAW Daily Momentum v3.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, DOGEUSDT — `44968fa9-faaf-45e9-874b-2aaf2a4b33aa` — duplicate of an identical newer draft
+- [ ] RUNECLAW Daily Momentum v3.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, DOGEUSDT — `0176ba31-f679-4984-b884-9ab64a23075e` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.11.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `898881ec-abf3-4211-a5db-8c372f274473` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.10.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `8711c783-1c65-4aa2-b9c6-7eeccab75231` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.10.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `83670122-86f4-4b8b-83e4-2dd18aedd0ad` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.10.1 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `36695052-a6a5-4740-9511-0c2972f9beca` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.9.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `5d6035da-6af9-426a-841c-c0e4c80fc6e7` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.9.0 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `e38520cb-c90d-436b-afcf-f50264e670fb` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.7.2 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `8a593616-c7b1-40f0-9739-1ac4e032cdcf` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.4 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `54b869e6-7fcc-4714-9697-11bab49cc203` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.4 — BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT — `5e047413-c576-45e8-82c6-3904c4a7bb3f` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — BTCUSDT — `90b5e7d7-c9b8-4528-99cf-425b18154a94` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — BTCUSDT — `627d966e-53c4-4738-8d45-f5534d0b84c0` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — BTCUSDT — `bb7da621-a486-4043-97ad-d70fb420b475` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — XRPUSDT — `a7ef6063-e3ca-4c3e-9b88-3d8037409b74` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — XRPUSDT — `af978dbf-c838-4283-bf6b-0fde699d782e` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — XRPUSDT — `c551da05-3af3-4e19-841e-7da334eafaf4` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — BTCUSDT — `3ac29e0e-fd37-4f7b-bdb8-dcf40a6e7bde` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — BTCUSDT — `01e9b299-0a0f-4c13-8130-a2ad45d69089` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `7a885f69-654a-4874-afee-c36a34fde8e1` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `d93ee183-2f3b-4fe0-bb04-819d34240131` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `e74a5442-5abb-4528-958a-93314572c722` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `94d97e46-a149-49e1-a039-c209d31fb995` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `f3b9b10a-59ee-45aa-af7c-c78fc105ff77` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `e2799da8-0c3c-4d4f-b341-8abd4a147d35` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `7c7797b8-6a76-4084-86a5-b2a4585e4eb2` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `d546ba6a-a4ce-4567-b38d-a13ba8b94606` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `52696532-32fc-484e-ba92-c8ad5243e878` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — DOGEUSDT — `4c462aac-502e-43d2-b572-703add78c854` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `441b2888-a598-43a0-9545-9c10ee8d1114` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `05e2fb63-20b0-4f7e-84c9-84ddee706e12` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `11894659-8aba-4a48-82c1-d0dfa229fadb` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `93339069-8a59-4fd6-874d-a42e8f83a5e4` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `0ed19d65-d5da-417b-a6a7-1b0664afe478` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `01f19de0-a833-4e6d-bfe5-300726fbf259` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — SOLUSDT — `53f8345c-0f8c-429b-b1e7-d8cca0f8d28a` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `ec3faf2c-892b-44fb-a2df-af7f1f3e2523` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `ae9de050-d269-4754-a70d-31390f81b1f8` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `3e2234de-c1aa-481e-aaa4-9af3f265ee74` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `75ce9d00-5011-406b-9e0d-463b3f0a6bef` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `8beb5eb2-4fe8-47c6-829b-666de0571bb8` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `500cf289-bf86-46ed-bac0-f4e491d99f07` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `a30f93dd-dbb3-457e-a044-9c23e027c4c6` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `28e571ef-a356-4856-bc0c-73d1ca65a0d5` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `7515c874-2d8c-4e86-9619-330da1b12ca3` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `e54f9519-89f1-4f82-98d6-f0a7ac1e8cc8` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `4a2d8c15-a7fb-406a-ae5a-bb2cb1ec6958` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `cd3a45da-968e-4cf7-9b08-95a04a930fbb` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `f8b28e7a-afc1-47f9-a4e3-af19baf7d6ce` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `bbfe0c17-ab57-47e8-932c-b4243f348fdf` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `9d647df0-fd72-4efd-be2b-e33d3d6fca82` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `29d41c21-9b1a-4c84-8d30-9f9fe88a813b` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.2 — ETHUSDT — `d6394a9f-facf-4920-a414-6902f8e80487` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `92697416-d838-4ea3-b05b-cba33414f4fc` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `00000a67-7181-4283-aa2b-19f8eba3cb6d` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `68b0bd1d-9774-4a4b-b1a1-4e3191c50e3c` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `4be3c4df-6c39-4a68-95d3-d53868dc1638` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `680193a6-92d4-4d12-9c1e-ce2478874936` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `98450562-f98b-47b6-a30c-2119bc94eb81` — duplicate of an identical newer draft
+- [ ] RUNECLAW GetClaw v2.1 — BTCUSDT — `b62f0332-9702-445b-a1f3-c9d0df975ed1` — duplicate of an identical newer draft
+- [ ] Majors Moving-Average Trend — BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT — `c1a0e06d-29cf-45a3-bccc-45e3d6aa0a31` — superseded by the new v0.2.0 draft

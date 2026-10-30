@@ -1,0 +1,97 @@
+name: eth-moving-average-trend
+version: 0.2.0
+display_name: Crypto Majors Moving-Average Trend
+display_name_i18n:
+  en: Crypto Majors Moving-Average Trend
+  zh: 加密主流币移动平均趋势
+  zh-tw: 加密主流幣移動平均趨勢
+  es: Tendencia de Medias Móviles de Criptoactivos Principales
+  ja: 主要暗号資産の移動平均トレンド
+  vi: Xu Hướng Đường Trung Bình Các Crypto Chính
+description: 'Closed-bar 50/200 moving-average trend for Bitget BTCUSDT, ETHUSDT, SOLUSDT and XRPUSDT perpetuals: long in uptrends, flat otherwise, sized to a volatility target'
+description_i18n:
+  en: 'Closed-bar 50/200 moving-average trend for Bitget BTCUSDT, ETHUSDT, SOLUSDT and XRPUSDT perpetuals: long in uptrends, flat otherwise, sized to a volatility target'
+  zh: 基于收盘柱 50/200 移动平均线的 Bitget BTCUSDT、ETHUSDT、SOLUSDT 和 XRPUSDT 永续趋势策略：上升趋势做多，其余时间空仓，按波动率目标控制仓位
+  zh-tw: 基於收盤柱 50/200 移動平均線的 Bitget BTCUSDT、ETHUSDT、SOLUSDT 與 XRPUSDT 永續趨勢策略：上升趨勢做多，其餘時間空倉，依波動率目標控制倉位
+  es: 'Tendencia con medias móviles 50/200 en los perpetuos BTCUSDT, ETHUSDT, SOLUSDT y XRPUSDT de Bitget: largo en tendencia alcista, fuera del mercado en otro caso, con tamaño ajustado a un objetivo de volatilidad'
+  ja: Bitget BTCUSDT、ETHUSDT、SOLUSDT、XRPUSDT 無期限契約の終値ベース50/200移動平均トレンド戦略：上昇トレンドではロング、それ以外はノーポジション、ボラティリティ目標でサイズを調整
+  vi: 'Theo xu hướng bằng đường trung bình 50/200 trên các hợp đồng vĩnh viễn BTCUSDT, ETHUSDT, SOLUSDT và XRPUSDT Bitget: mua khi xu hướng tăng, đứng ngoài khi không, khối lượng theo mục tiêu biến động'
+long_description: 'This Playbook aims to capture sustained upward trends across four major Bitget USDT perpetual markets while stepping aside when those trends fade. Its approach is built on a simple assumption: large crypto majors spend long stretches trending, and a patient trend filter on completed candles can stay invested through the middle of a rise without predicting every turning point. For each market independently, it compares a shorter moving-average view with a longer moving-average view of closed four-hour candles. When the shorter view is above the longer one, it holds a long position; when it is below, it holds no position in that market. It never opens short positions.
+
+
+  Position size follows a volatility target. Each market''s weight starts from the configured target exposure and is scaled down when that market''s recent realized volatility is high relative to the target, and never scaled up. When several markets are long at once, the aggregate gross cap of one times the margin budget is shared between them, so portfolio leverage never exceeds one. Positions are resized at each four-hour decision as prices and volatility change.
+
+
+  There is no independent take-profit or stop-loss. A long position is held while the trend relationship holds and is closed when the shorter view falls back below the longer one. Exits are late by design: moving averages lag, so a position can give back a meaningful part of a move before it closes, and sideways markets produce repeated entries and exits whose fees accumulate.
+
+
+  Because the strategy is long or flat, it depends on crypto majors rising over the long run. It does not profit from falling markets, and it pays funding while long, which becomes costly in heated bull markets. The four markets are highly correlated, so the volatility target reduces size without adding much diversification. Historical results were sensitive to the choice of moving-average lengths, and faster settings performed noticeably worse. Gaps, slippage, liquidation mechanics and fee differences can make live results diverge from historical evidence. Backtest returns are not forecasts; evaluate the displayed drawdown and execution evidence before subscribing.
+
+  '
+market_type: contract
+trading_symbols:
+- BTCUSDT
+- ETHUSDT
+- SOLUSDT
+- XRPUSDT
+output_kind: trade_strategy
+decision_mode: deterministic
+backtest_support: full
+runtime_profile: deterministic
+execution_mode: follow_trade
+follow_trade_supported: true
+tags:
+- crypto
+- majors
+- trend
+- moving-average
+- long-only
+- volatility-target
+- perpetual
+- bitget
+schedule:
+  cron: 0 */4 * * *
+  tz: UTC
+strategy_config:
+  trading_symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - XRPUSDT
+  fast_period: 50
+  slow_period: 200
+  target_weight: 1.0
+  max_gross_leverage: 1.0
+  leverage: 1
+  utilization: 1.0
+  margin_budget: '10000'
+  starting_capital: '10000'
+  allow_short: false
+  vol_target: 0.4
+  vol_window: 180
+user_config_schema:
+  target_weight:
+    type: number
+    default: 1.0
+    min: 0.1
+    max: 1.0
+    label: Gross target exposure
+  margin_budget:
+    type: string
+    default: '10000'
+    pattern: ^[0-9]+(\.[0-9]+)?$
+    label: Margin budget USDT
+paper_entry:
+  module: src/paper_entry.py
+  decision_core:
+    module: src/decision_core.py
+    function: decide
+  granularity: 4h
+  symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - XRPUSDT
+  lookback_bars: 200
+  exchange: bitget
+  max_gross_leverage: 1.0
