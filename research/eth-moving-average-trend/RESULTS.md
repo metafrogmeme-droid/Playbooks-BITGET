@@ -38,6 +38,21 @@ The platform's win rate and profit factor count every resize as a trade, so they
 
 The platform's data source returned no 4-hour futures candles for a window starting 2023-11-26, so the platform evidence covers only the last 18 months.
 
+## Cross-venue check (`kraken_check.py`)
+
+The same simulator run on Kraken spot 4-hour candles (`XBTUSD`, `ETHUSD`, `SOLUSD`, `XRPUSD`, 2024-01-01 to
+2025-12-31, supplied by the user) and on Bitget perps over the identical span, 200-bar warm-up, no funding:
+
+| | Bitget perps | Kraken spot |
+|---|---|---|
+| this version | +188.1%, −33.2% max DD, Sharpe 1.45 | +186.0%, −32.7%, 1.44 |
+| original long/short | +94.5%, −44.7%, 0.92 | +94.0%, −44.8%, 0.91 |
+
+The result is not an artifact of Bitget's data. This span is inside the period already tested, so it adds no
+new market history: the Kraken files that would cover the 2014–15 and 2018 bear markets were not supplied.
+
+Run: `python3 kraken_check.py <folder with *_240.csv>` from a directory holding the `fetch.py` output.
+
 ## Package fixes
 
 - `src/main.py` asked for 900 bars per page, which is 150 days at 4 hours; the data API silently clamps any request to 90 days. Pages are now at most 90 days, and the loader refuses a backtest when more than 1% of the expected bars are missing.
