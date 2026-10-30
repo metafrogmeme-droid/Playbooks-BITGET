@@ -1,4 +1,6 @@
 __pycache__/
 *.pyc
-research/**/*.json
+research/**/*_15m.json
+research/**/*_fund.json
+research/eth-moving-average-trend/*.json
 *.tar.gz
