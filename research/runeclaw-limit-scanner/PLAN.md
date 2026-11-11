@@ -27,13 +27,15 @@ The per-trade figures appear to be before fees: the card's own summary is profit
 - **Phase 0, the 12-month replay.** It already exists in `001`: the frozen book and its dev/hold-out split at 2026-04-24. Repeating it here would spend the same hold-out twice.
 - **Phase 2, real limit entries.** This is `001`'s pre-registered variant V0: maker fees of 2 bp a side and a fill only when price trades through the limit. Cutting fees cannot help a strategy that is flat before fees. Lesson 2 of `playbooks-bitget-agent`'s conclusion found the same: "where fees were tamed, there was no edge underneath".
 
-**The pre-registered forward test is the deciding test, and it cannot be scored yet.** It needs at least 100 closed trades filled after 2026-10-23, with funding priced. `fetch_forward.py` extends the frozen book with Bitget public candles and funding from 2026-10-01 to 2026-11-11 12:00 UTC. All 34 symbols returned 993 closed bars and complete funding, and the 232–233 overlapping bars match the frozen closes exactly. That gives 19.5 days after the cutoff. At the replay's rate of 1.07 trades a day, about 21 trades would exist today, and 100 not before about 2027-01-24. The realistic fill model fills fewer orders than the card's model, so probably later.
+**The pre-registered forward test is the deciding test, and it cannot be scored yet.** It needs at least 100 closed trades filled after 2026-10-23, with funding priced. `fetch_forward.py` extends the frozen book with Bitget public candles and funding from 2026-10-01 to 2026-11-11 12:00 UTC. All 34 symbols returned 993 closed bars and complete funding, and the 232–233 overlapping bars match the frozen closes exactly. That gives 19.5 days after the cutoff. Running 001's simulator on it (see `RESULTS.md`) gives 34 to 51 forward trades per variant so far, so 100 exist around 2026-11-30 to 12-04 for V0 and by 2027-01-19 at the latest for V3. (An earlier estimate here, 2027-01-24, used the scorecard's slower trade rate.)
+
+**`RESULTS.md` adds one more finding: V1 and V3, the only pre-registered variants that are positive on the hold-out, owe all of it to look-ahead in the fill model.** They fill only when the fill bar closes back through the limit, yet enter at the limit price. Entered at that close instead, as a live bot would have to, the same trades lose 12–13 bp per trade on the hold-out.
 
 **Revised recommendation:**
 
 1. Do not build or publish a 0.7.0 that changes the signal until the forward test passes. No variant tried so far has an edge to optimise.
 2. Act on the published listing now; this needs no research. 0.6.47 to 0.6.55 show a profit factor computed from unsized pre-fee returns, and a description promising equity and metals legs that the symbol list does not trade. On the GetAgent page, deprecate them or stop offering them. If a version stays listed, Phase 1 below (honest reporting) is the one change worth making, without touching the signal.
-3. Score V0 to V3 with `001`'s `evaluate_forward` once 100 trades after the cutoff exist. Do not add variants before then: the pre-registration fixes N at 4.
+3. Before the forward window is scored, drop V1 and V3 from `001`'s pre-registration or redefine them to enter at the reclaim close, and give trades exit times so funding can be priced. Then score with `evaluate_forward` once 100 trades after the cutoff exist.
 
 ## Published evidence
 
