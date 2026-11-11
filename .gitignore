@@ -5,3 +5,4 @@ research/**/*_fund.json
 research/eth-moving-average-trend/*.json
 *.tar.gz
 research/runeclaw-limit-scanner/*.json
+research/runeclaw-limit-scanner/forward_1h/
